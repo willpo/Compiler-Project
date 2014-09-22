@@ -5,6 +5,8 @@
  */
 package minijava;
 
+import java.io.File;
+
 /**
  *
  * @author leeboy
@@ -14,8 +16,16 @@ public class Main {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-        // TODO code application logic here
+    public static void main(String[] args) 
+    {
+        String path = "/home/leeboy/NetBeansProjects/Compiler-Project/MiniJava/src/minijava/scanner/minijava.flex";
+        gerarLexer(path);
+    }
+    
+    public static void gerarLexer(String path)
+    {
+        File file = new File(path);
+        jflex.Main.generate(file);
     }
     
 }
